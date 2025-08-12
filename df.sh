@@ -28,6 +28,7 @@ df_menu() {
 # Função do DiskFree #
 # ################## #
 df_function() {
+    clear # Limpa a tela
     df -B"$1" | column -t # Exibe o uso de disco baseado na unidade especificada
     read -rp "Pressione Enter para continuar." # Aguarda o usuário pressionar Enter
 }

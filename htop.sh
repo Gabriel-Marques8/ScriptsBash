@@ -58,6 +58,10 @@ filter_processes() {
     for pid in $(pgrep -i -f "$process_name"); do
         ps -p "$pid" -o pid,user,pcpu,pmem,comm
     done
+
+    if [ -z "$process_name" ]; then
+        echo "Nenhum processo encontrado com o nome '$process_name'."
+    fi
     read -rp "Pressione Enter para continuar." # Espera o usuário pressionar Enter
 }
 

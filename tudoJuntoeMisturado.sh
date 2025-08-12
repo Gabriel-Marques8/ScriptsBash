@@ -143,6 +143,7 @@ df_menu() {
 # Função do DiskFree #
 # ################## #
 df_function() {
+    clear # Limpa a tela
     df -B"$1" | column -t # Exibe o uso de disco baseado na unidade especificada
     read -rp "Pressione Enter para continuar." # Aguarda o usuário pressionar Enter
 }
@@ -160,11 +161,20 @@ lsblk_menu() {
 
       read -rp "Escolha uma opção: " opcao
       case $opcao in
-          1) lsblk ;;
+          1) lsblk_function ;;
           2) break ;;
           *) echo "Opção inválida!"; sleep 1 ;;
       esac
   done
+}
+
+# ################# #
+# Função do lsblk   #
+# ################# #
+function lsblk_function(){
+  clear # Limpa a tela
+  lsblk # Lista todos os dispositivos
+  read -rp "Pressione Enter para continuar." # Aguarda o usuário pressionar Enter
 }
 
 # ################# #

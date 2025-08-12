@@ -13,9 +13,20 @@ lsblk_menu() {
         read -rp "Escolha uma opção: " opcao
 
         case $opcao in
-            1) lsblk ;;
+            1) lsblk_function ;;
             2) break ;;
             *) echo "Opção inválida!"; sleep 1 ;;
         esac
     done
 }
+
+# ################# #
+# Função do lsblk   #
+# ################# #
+lsblk_function() {
+    clear # Limpa a tela
+    lsblk # Lista todos os dispositivos
+    read -rp "Pressione Enter para continuar." # Aguarda o usuário pressionar Enter
+}
+
+lsblk_menu
